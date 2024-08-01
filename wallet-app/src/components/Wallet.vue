@@ -1,5 +1,23 @@
 <template>
-    <!-- Template remains the same -->
+    <div class="wallet p-6 md:p-12 max-w-lg mx-auto bg-white rounded-xl shadow-2xl space-y-4">
+        <div class="wallet-item">
+            <label for="public-key" class="wallet-label block text-sm font-medium text-gray-700">Public Key:</label>
+            <div id="public-key" class="wallet-field mt-1 block w-full p-2 border border-gray-300 rounded-md">{{
+                publicKey }}</div>
+        </div>
+        <div class="wallet-item w-full">
+            <label for="balance" class="wallet-label block text-sm font-medium text-gray-700">Balance:</label>
+            <div id="balance" class="wallet-field mt-1 block w-full p-2 border border-gray-300 rounded-md">{{ balance }}
+                ETH</div>
+        </div>
+        <div class="wallet-item w-full flex justify-center">
+            <w3m-button />
+        </div>
+        <button v-if="isConnected" @click="sendTransaction"
+            class="send-button w-full py-2 px-4 border border-transparent text-sm font-medium rounded-2xl text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+            Send Transaction
+        </button>
+    </div>
 </template>
 
 <script setup lang="ts">
