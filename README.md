@@ -4,6 +4,6 @@ A web3 wallet app that generates a new address. The user can then connect their 
 
 ## Installation
 
-cd wallet-app
-npm install
+cd wallet-app\
+npm install\
 npm run dev
